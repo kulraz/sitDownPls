@@ -1,0 +1,228 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.specials {
+    &__container {
+        padding-top: 70px;
+        overflow: hidden;
+        @media (max-width: 1300px) {
+            padding: unset;
+            margin: 0 36px;
+            padding-top: 70px;
+        }
+        @media (max-width: 1000px) {
+            margin: 0 72px;
+        }
+        @media (max-width: 700px) {
+            margin: 0 12px;
+        }
+    }
+    &__container--desc {
+        @media (max-width: 1200px) {
+            display: none;
+        }
+    }
+    &__container--tablet {
+        display: none;
+        @media (max-width: 1200px) {
+            display: block;
+        }
+    }
+    &__container--desc .specials__list {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr;
+        grid-gap: 32px;
+    }
+    &__container--desc .specials__list--first .special__item:nth-child(2) {
+        background-image: url("images/specialsBg2.png");
+        background-size: initial;
+        background-repeat: no-repeat;
+        background-position: 90% 90%;
+    }
+    &__container--desc .specials__list--second .special__item:nth-child(2) {
+        background-image: url("images/specialsBg5.png");
+        background-size: initial;
+        background-repeat: no-repeat;
+        background-position: 90% 90%;
+    }
+    &__container--desc .special__item:nth-child(2) h3 {
+        padding: 0 0 0 30px;
+    }
+    &__caption {
+        margin-bottom: 26px;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 100%;
+        color: $titleColor;
+        @media (max-width: 700px) {
+            font-size: 24px;
+        }
+    }
+    &__forward-btn svg circle,
+    &__forward-btn svg path,
+    &__back-btn svg circle,
+    &__back-btn svg path {
+        transition: stroke 0.3s ease-in-out, fill 0.3s ease-in-out;
+    }  color: $link-btnColor;
+
+    &__forward-btn:focus:not(:hover) svg circle,
+    &__back-btn:focus:not(:hover) svg circle {
+        stroke: #A65CF0;
+        fill: #C998FB; 
+    }
+
+    &__forward-btn:focus:not(:hover) svg path,
+    &__back-btn:focus:not(:hover) svg path {
+        fill: #FFF;
+    }
+
+    &__forward-btn:hover svg circle,
+    &__back-btn:hover svg circle {
+        stroke: #A65CF0;
+        fill: #A65CF0;
+    }
+
+    &__forward-btn:hover svg g path,
+    &__back-btn:hover svg g path {
+        stroke: #ffffff;
+    }
+    &__forward-btn:active svg circle,
+    &__back-btn:active svg circle {
+        stroke: #7033AC;
+        fill: #7033AC;
+    }
+    &__forward-btn:active svg g path,
+    &__back-btn:active svg g path {
+        stroke: #ffffff;
+    }
+    &__list {
+        @include list-reset;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+        background: #F7F7F7;
+        border-radius: 10px;
+        padding: 30px 0;
+        min-height: 511px;
+    }
+    &__discount {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        background-image: url('images/bgDiscSpecial.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        padding: 7px 29px 7px 19px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 19px;
+        color: #FFFFFF;
+    }
+    &__img {
+        align-self: center;
+        margin-bottom: 16px;
+        max-height: 245px;
+    }
+    &__title {
+        margin-bottom: 23px;
+        max-width: 255px;
+        padding: 0 0 0 30px;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 130%;
+        color: $titleColor;
+        @media (max-width: 700px) {
+            max-width: unset;
+        }
+    }
+    &__price {
+        margin-bottom: 23px;
+        padding: 0 30px;
+    }
+    &__new-price {
+        margin-right: 30px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 130%;
+        color: #FF862F;
+    }
+    &__old-price {
+        text-decoration-line: line-through;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        color: $mainColor;
+    }
+    &__btn {
+        @include btn-reset;
+        @include btn-common;
+        @include secondary-btn;
+        margin-left: 30px;
+    }
+    &__btn:focus-visible:not(:active) {
+        @include secondary-btn-focus;
+    }
+    &__btn:hover {
+        @include secondary-btn-hover;
+    }
+    &__btn:active:not(:focus-visible) {
+        @include secondary-btn-active;
+    }
+}
+
+
+.specials__forward-btn.swiper-button-disabled circle,
+.specials__forward-btn.swiper-button-disabled path,
+.specials__back-btn.swiper-button-disabled circle,
+.specials__back-btn.swiper-button-disabled path {
+    stroke: #999999;
+}
+
+.specials__forward-btn svg circle,
+.specials__back-btn svg circle,
+.specials__forward-btn svg path,
+.specials__back-btn svg path,
+.specials__forward-btn svg g path,
+.specials__back-btn svg g path  {
+    transition: stroke 0.3s ease-in-out, fill 0.3s ease-in-out;
+}
+
+.specials__forward-btn:focus:not(:hover) svg circle,
+.specials__back-btn:focus:not(:hover) svg circle {
+    stroke: #A65CF0;
+    fill: #C998FB; 
+}
+.specials__forward-btn:focus:not(:hover) svg g path,
+.specials__back-btn:focus:not(:hover) svg g path {
+    fill: #C998FB; 
+}
+.specials__forward-btn:focus:not(:hover) svg path,
+.useful__back-btn:focus:not(:hover) svg path {
+    fill: #FFF;
+}
+
+.specials__forward-btn:hover svg circle,
+.specials__back-btn:hover svg circle {
+    stroke: #A65CF0;
+    fill: #A65CF0;
+}
+
+.specials__forward-btn:hover svg g path,
+.useful__back-btn:hover svg g path {
+    stroke: #ffffff;
+}
+
+.specials__forward-btn:active svg circle,
+.specials__back-btn:active svg circle {
+    fill: #7033AC;
+    stroke: #7033AC;
+}
+.specials__forward-btn:active svg g path,
+.specials__back-btn:active svg g path {
+    stroke: #ffffff;
+}

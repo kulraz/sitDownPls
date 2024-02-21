@@ -1,0 +1,68 @@
+@mixin list-reset {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+@mixin btn-reset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  cursor: pointer;
+}
+@mixin btn-common {
+  width: fit-content;
+  border-radius: 10px;
+  padding: 19px 35px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, outline 0.3s ease-in-out;
+}
+@mixin primary-btn {
+  color: #ffffff;
+  background: $link-btnColor;
+}
+@mixin secondary-btn {
+  outline: 2px solid $link-btnColor;
+  color: $link-btnColor;
+}
+@mixin primary-btn-hover {
+  background: #C998FB;
+}
+@mixin secondary-btn-hover {
+  background: #A65CF0;
+  color: #ffffff;
+}
+@mixin primary-btn-focus {
+  background: #C998FB;
+  outline: 2px solid #7033AC;
+}
+@mixin secondary-btn-focus {
+  background: #C998FB;
+  outline: 2px solid #7033AC;
+  color: #ffffff;
+}
+@mixin primary-btn-active {
+  background: #7033AC;
+  outline: 2px solid #7033AC;
+}
+@mixin secondary-btn-active {
+  background: #7033AC;
+  outline: none;
+  color: #ffffff;
+}
+
+// @mixin input-hover {
+  
+// }
+// @mixin arrow-focus {
+//   background: #C998FB;
+//   border: 2px solid #7033AC;
+// }
+// @mixin arrow-active {
+//   background: #7033AC;
+//   border: 2px solid #7033AC;
+// }

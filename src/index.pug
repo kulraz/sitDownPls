@@ -1,0 +1,334 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="normalize.css")
+    link(rel="stylesheet", href="resources/choices.min.css")
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css")
+    link(rel="stylesheet", href="main.css")
+    link(rel="shortcut icon" href="images/fav.png" type="image/x-icon")
+    title SitDownPls
+  body
+    - var items = [{rating: '4,8', link: 'images/tops3.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops2-700.png', title: 'Диван тканевый “D-31”', price: '28 490 руб'},{rating: '4,8', link: 'images/tops4.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops3-700.png', title: 'Диван велюровый “Y-68”', price: '22 990 руб'},{rating: '5,0', link: 'images/tops1.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops4-700.png', title: 'Диван кожаный “R-94”', price: '94 990 руб'},{rating: '4,8', link: 'images/tops5.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops5-700.png', title: 'Диван из шинила “W-95”', price: '22 990 руб'},{rating: '4,8', link: 'images/tops6.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops6-700.png', title: 'Диван флоковый “G-41”', price: '17 990 руб'},{rating: '4,8', link: 'images/tops7.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops7-700.png', title: 'Диван шиниловый “V-43”', price: '19 990 руб'},{rating: '4,9', link: 'images/tops2.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops1-700.png', title: 'Диван апартековый “T-75”', price: '69 990 руб'},{rating: '4,7', link: 'images/tops8.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops8-700.png', title: 'Диван велюровый “S-99”', price: '19 990 руб'},{rating: '4,6', link: 'images/tops10.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops9-700.png', title: 'Диван флоковый “H-64”', price: '25 990 руб'},{rating: '4,6', link: 'images/tops11.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops10-700.png', title: 'Диван флоковый “H-58”', price: '23 990 руб'},{rating: '4,6', link: 'images/tops12.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops11-700.png', title: 'Диван из кожзама “R-43”', price: '33 990 руб'},{rating: '4,6', link: 'images/tops13.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops12-700.png', title: 'Диван из шинила “С-42”', price: '18 990 руб'},{rating: '4,6', link: 'images/tops14.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops13-700.png', title: 'Диван велюровый “U-58”', price: '21 990 руб'},{rating: '4,5', link: 'images/tops15.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops14-700.png', title: 'Диван флоковый “F-41”', price: '17 990 руб'},{rating: '4,4', link: 'images/tops16.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops15-700.png', title: 'Диван велюровый “R-85”', price: '34 990 руб'},{rating: '4,5', link: 'images/tops17.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops16-700.png', title: 'Диван велюровый “S-44”', price: '19 990 руб'},{rating: '4,4', link: 'images/tops18.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops17-700.png', title: 'Диван из шинила “С-80”', price: '20 990 руб'}];
+    - var specials = [{discount: '- 300', link: 'images/specials5-1024.png', linkMobile: 'images/specials1-700', title: 'Мини-скульптура “Oh my deer”', newPrice: '690 руб', oldPrice: '990 руб'},{discount: '- 600', link: 'images/specials1-1024.png', linkMobile: 'images/specials1-700', title: 'Диван вел-флок “Z-85”', newPrice: '22 990 руб', oldPrice: '32 990 руб'},{discount: '- 700', link: 'images/specials6-1024.png', linkMobile: 'images/specials1-700', title: 'Термометр + гидрометр “H-18”', newPrice: '1 390 руб', oldPrice: '2 090 руб'},{discount: '- 9 000', link: 'images/specials3-1024.png', linkMobile: 'images/specials1-700', title: 'Кресло велюровое “X-24”', newPrice: '15 990 руб', oldPrice: '24 990 руб'},{discount: '- 10 000', link: 'images/specials2-1024.png', linkMobile: 'images/specials1-700', title: 'Диван тканевый “Z-44”', newPrice: '22 990 руб', oldPrice: '32 990 руб'},{discount: '- 600', link: 'images/specials4-1024.png', linkMobile: 'images/specials1-700', title: 'Будильник  “Quartz-23”', newPrice: '1 290 руб', oldPrice: '1 890 руб'}];
+    - var specialsFirst = [{discount: '- 9 000', link: 'images/specials1.png', title: 'Кресло велюровое “X-24”', newPrice: '15 990 руб', oldPrice: '24 990 руб'},{discount: '- 10 000', link: 'images/specials2.png', title: 'Диван тканевый “Z-44”', newPrice: '22 990 руб', oldPrice: '32 990 руб'},{discount: '- 600', link: 'images/Clock.png', title: 'Будильник  “Quartz-23”', newPrice: '1 290 руб', oldPrice: '1 890 руб'}]
+    - var specialsSecond = [{discount: '- 300', link: 'images/specials4.png', title: 'Мини-скульптура “Oh my deer”', newPrice: '690 руб', oldPrice: '990 руб'},{discount: '- 600', link: 'images/specials5.png', title: 'Диван вел-флок “Z-85”', newPrice: '22 990 руб', oldPrice: '32 990 руб'},{discount: '- 700', link: 'images/specials6.png', title: 'Термометр + гидрометр “H-18”', newPrice: '1 390 руб', oldPrice: '2 090 руб'}]
+    include includes/header.pug
+    main.main
+      section.hero(aria-label="свайпер")
+        .hero__container
+          .swiper.hero-swiper
+            .swiper-wrapper
+              .swiper-slide.swiper-slide--one
+                .container.swiper__container.grid
+                  h1.swiper__caption Скидка 15% на первую покупку
+                  button.swiper__btn.swiper__btn--desc Получить!
+                  button.swiper__btn.swiper__btn--tablet Получить!
+              .swiper-slide.swiper-slide--two
+                .container.swiper__container.grid
+                  h1.swiper__caption 1000+ аксессуаров для дома
+                  button.swiper__btn.swiper__btn--desc Подробнее
+                  button.swiper__btn.swiper__btn--tablet Получить!
+              .swiper-slide.swiper-slide--three
+                .container.swiper__container.grid
+                  h1.swiper__caption.swiper__caption--three Коллекция стильного и яркого текстиля
+                  button.swiper__btn.swiper__btn--desc Подробнее
+                  button.swiper__btn.swiper__btn--tablet Получить!
+            .swiper-pagination
+              span
+              span
+              span
+        .hero__mobile-btn.mobile-btn
+          button.mobile-btn__btn Получить!    
+      section.specials
+        .container.specials__container.specials__container--tablet
+          .specials__caption Специальные предложения
+          .specialsSwiper.relative
+            ul.specials__list.swiper-wrapper
+                each product in specials
+                  li.swiper-slide.specials__item.relative
+                    a.itemLink(href="itemPage.html" target="_blank") 
+                    p.specials__discount= product.discount
+                    img.specials__img(src= product.link alt='pic')
+                    h3.specials__title= product.title
+                    .specials__price
+                      span.specials__new-price= product.newPrice
+                      span.specials__old-price= product.oldPrice
+                    button.specials__btn.itemBtn Купить
+            .specials__pagination
+                button.specials__forward-btn.specials__forward-btn--tablet(aria-label="пролистать назад")
+                  svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    g
+                      circle(cx="16" cy="16" r="15" transform="matrix(-1 0 0 1 32 0)" stroke="#A65CF0" stroke-width="2")
+                      path(d="M18 11L13 16L18 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                    defs
+                      clipPath
+                        rect(width="32" height="32" fill="white")
+                button.specials__back-btn.specials__back-btn--tablet(aria-label="Пролистать вперед")
+                  svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    g
+                      circle(cx="16" cy="16" r="15" transform="matrix(-1 0 0 1 32 0)" stroke="#A65CF0" stroke-width="2")
+                      path(d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                    defs
+                      clipPath
+                        rect(width="32" height="32" fill="white")  
+        .container.specials__container.specials__container--desc
+          .specials__caption Специальные предложения
+          .specialsSwiper-desc.relative
+              .swiper-wrapper
+                ul.specials__list.specials__list--first.swiper-slide
+                  each product in specialsFirst
+                    li.specials__item.relative
+                      a.itemLink(href="itemPage.html" target="_blank") 
+                      p.specials__discount= product.discount
+                      img.specials__img(src= product.link alt='pic')
+                      h3.specials__title= product.title
+                      .specials__price
+                        span.specials__new-price= product.newPrice
+                        span.specials__old-price= product.oldPrice
+                      button.specials__btn.itemBtn Купить
+                ul.specials__list.specials__list--second.swiper-slide
+                  each product in specialsSecond
+                    li.specials__item.relative
+                      a.itemLink(href="itemPage.html" target="_blank") 
+                      p.specials__discount= product.discount
+                      img.specials__img(src= product.link alt='pic')
+                      h3.specials__title= product.title
+                      .specials__price
+                        span.specials__new-price= product.newPrice
+                        span.specials__old-price= product.oldPrice
+                      button.specials__btn.itemBtn Купить
+              .specials__pagination
+                button.specials__forward-btn
+                  svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    g
+                      circle(cx="16" cy="16" r="15" transform="matrix(-1 0 0 1 32 0)" stroke="#A65CF0" stroke-width="2")
+                      path(d="M18 11L13 16L18 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                    defs
+                      clipPath
+                        rect(width="32" height="32" fill="white")
+                button.specials__back-btn
+                  svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    g
+                      circle(cx="16" cy="16" r="15" transform="matrix(-1 0 0 1 32 0)" stroke="#A65CF0" stroke-width="2")
+                      path(d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                    defs
+                      clipPath
+                        rect(width="32" height="32" fill="white")  
+      section.tops
+        .tops__container.container.flex
+          h2.tops__caption Высокий рейтинг
+          ul.tops__list.grid
+            each item in items
+              li.tops__item.tops-item.relative
+                a.itemLink(href="itemPage.html" target="_blank")  
+                .tops-item__rating
+                  img(src="images/rating.png", alt="rating")
+                  span= item.rating
+                picture.tops-item__img
+                  source(srcset= item.linkMobile media="(max-width: 700px)")
+                  source(srcset= item.link media="(max-width: 1000px)")   
+                  source(srcset= item.link media="(max-width: 1300px)")
+                  img.tops-item__img(src= item.link alt='pic')
+                h3.tops-item__title= item.title
+                p.tops-item__price= item.price
+                button.tops-item__btn Купить
+          button.tops__btn Смотреть больше товаров
+      section.banner
+        .container.banner__container
+          h2.banner__title.banner__title--top  Оксфорд 1950
+          p.banner__title.banner__title--bottom Новая коллекция изысканных кресел
+          button.banner__btn Ознакомиться
+        .banner__mobile-btn-container.container
+          button.banner__mobile-btn Ознакомиться
+      section.top-category
+        .container.top-category__container
+          h2.top-category__caption Топ категории
+          ul.top-category__list.grid
+            li.top-category__item.top-category__item--one
+              ul.top-category__menu
+                li.top-category__menu-item Прямые
+                li.top-category__menu-item Угловые
+                li.top-category__menu-item Модульные
+              .top-category__title-container
+                h3.top-category__title Диваны
+                svg.top-category__mobile-link(width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  g
+                    circle(cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2")
+                    path(d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                  defs
+                    clipPath
+                      rect(width="22" height="22" fill="white")
+              picture.top-category__img
+                source(srcset="images/top-category1-700.png" media="(max-width:320px)")
+                img(src="images/top-category1.png", alt="pic")
+              .top-category__link.relative
+                a.itemLink(href="catalog.html" target="_blank")
+                p В каталог
+                svg(width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  g
+                    circle(cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2")
+                    path(d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                  defs
+                    clipPath
+                      rect(width="22" height="22" fill="white")
+            li.top-category__item.top-category__item--two
+              ul.top-category__menu
+                li.top-category__menu-item Мягкие
+                li.top-category__menu-item Кресла-кровати
+              .top-category__title-container
+                h3.top-category__title Кресла
+                svg.top-category__mobile-link(width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  g
+                    circle(cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2")
+                    path(d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                  defs
+                    clipPath
+                      rect(width="22" height="22" fill="white")
+              picture.top-category__img
+                source(srcset="images/top-category2-700.png" media="(max-width:320px)")
+                source(srcset="images/top-category2-1024.png" media="(max-width:1024px)")
+                img(src="images/top-category2.png", alt="pic")
+              .top-category__link.relative
+                a.itemLink(href="catalog.html" target="_blank")
+                p В каталог
+                svg(width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  g
+                    circle(cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2")
+                    path(d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                  defs
+                    clipPath
+                      rect(width="22" height="22" fill="white")
+            li.top-category__item.top-category__item--three
+              ul.top-category__menu
+                li.top-category__menu-item Односпальные
+                li.top-category__menu-item Двуспальные
+              .top-category__title-container
+                h3.top-category__title Кровати
+                svg.top-category__mobile-link(width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  g
+                    circle(cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2")
+                    path(d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                  defs
+                    clipPath
+                      rect(width="22" height="22" fill="white")
+              picture.top-category__img
+                source(srcset="images/top-category3-700.png" media="(max-width:320px)")
+                source(srcset="images/top-category3-1024.png" media="(max-width:1024px)")
+                img(src="images/top-category3.png", alt="pic")
+              .top-category__link.relative
+                a.itemLink(href="catalog.html" target="_blank")
+                p В каталог
+                svg(width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  g
+                    circle(cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2")
+                    path(d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                  defs
+                    clipPath
+                      rect(width="22" height="22" fill="white")
+            li.top-category__item.top-category__item--four
+              ul.top-category__menu
+                li.top-category__menu-item Тумбы
+                li.top-category__menu-item Комоды
+              .top-category__title-container
+                h3.top-category__title Тумбы и комоды
+                svg.top-category__mobile-link(width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  g
+                    circle(cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2")
+                    path(d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                  defs
+                    clipPath
+                      rect(width="22" height="22" fill="white")
+              picture.top-category__img
+                source(srcset="images/top-category4-700.png" media="(max-width:320px)")
+                source(srcset="images/top-category4-1024.png" media="(max-width:1024px)")
+                img(src="images/top-category4.png", alt="pic")
+              .top-category__link.relative
+                a.itemLink(href="catalog.html" target="_blank")
+                p В каталог
+                svg(width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  g
+                    circle(cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2")
+                    path(d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                  defs
+                    clipPath
+                      rect(width="22" height="22" fill="white")
+            li.top-category__item.top-category__item--five
+              ul.top-category__menu
+                li.top-category__menu-item Деревянные
+                li.top-category__menu-item Металлокаркас
+              .top-category__title-container
+                h3.top-category__title Стулья
+                svg.top-category__mobile-link(width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  g
+                    circle(cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2")
+                    path(d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                  defs
+                    clipPath
+                      rect(width="22" height="22" fill="white")
+              picture.top-category__img
+                source(srcset="images/top-category5-700.png" media="(max-width:320px)")
+                source(srcset="images/top-category5-1024.png" media="(max-width:1024px)")
+                img(src="images/top-category5.png", alt="pic")
+              .top-category__link.relative
+                a.itemLink(href="catalog.html" target="_blank")
+                p В каталог
+                svg(width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  g
+                    circle(cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2")
+                    path(d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                  defs
+                    clipPath
+                      rect(width="22" height="22" fill="white")
+      section.useful
+        .container.useful__container
+          .useful__top-content
+              h2.useful__caption Полезное
+          .mySwiper
+              .useful__list.swiper-wrapper.swiper-container
+                article.useful__article.swiper-slide
+                  img.useful__article-img(src="images/useful1.jpg", alt="pic")
+                  p.useful__article-descr И нет сомнений, что сделанные на базе интернет-аналитики выводы представляют собой не что иное?
+                  button.useful__btn Читать
+                article.useful__article.swiper-slide
+                  img.useful__article-img(src="images/useful2.jpg", alt="pic")
+                  p.useful__article-descr Как принято считать, некоторые особенности приносят несомненную пользу обществу?
+                  button.useful__btn Читать
+                article.useful__article.swiper-slide
+                  img.useful__article-img(src="images/useful3.jpg", alt="pic")
+                  p.useful__article-descr Ясность нашей позиции очевидна: укрепление и развитие внутренней структуры?
+                  button.useful__btn Читать
+                article.useful__article.swiper-slide
+                  img.useful__article-img(src="images/useful4.jpg", alt="pic")
+                  p.useful__article-descr Прежде всего, консультация с широким активом однозначно фиксирует необходимость распределения?
+                  button.useful__btn Читать
+                article.useful__article.swiper-slide
+                  img.useful__article-img(src="images/useful5.jpg", alt="pic")
+                  p.useful__article-descr Как принято считать, некоторые особенности приносят несомненную пользу обществу?
+                  button.useful__btn Читать
+              .useful__pagination.swiper-pagination
+                button.useful__forward-btn(aria-label="пролистать назад")
+                  svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    g
+                      circle(cx="16" cy="16" r="15" transform="matrix(-1 0 0 1 32 0)" stroke="#A65CF0" stroke-width="2")
+                      path(d="M18 11L13 16L18 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                    defs
+                      clipPath
+                        rect(width="32" height="32" fill="white")
+                button.useful__back-btn(aria-label="пролистать вперед")
+                  svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    g
+                      circle(cx="16" cy="16" r="15" transform="matrix(-1 0 0 1 32 0)" stroke="#A65CF0" stroke-width="2")
+                      path(d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                    defs
+                      clipPath
+                        rect(width="32" height="32" fill="white")
+    include includes/form.pug
+    include includes/dialogCallBack.pug
+    include includes/footer.pug
+    script(src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js")
+    script(src="resources/choices.min.js")
+    script(src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js")
+    script(src="app.js")

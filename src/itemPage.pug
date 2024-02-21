@@ -1,0 +1,189 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="normalize.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css")
+    link(rel="stylesheet", href="resources/choices.min.css")
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css")
+    link(rel="stylesheet", href="main.css")
+    link(rel="shortcut icon" href="images/fav.png" type="image/x-icon")
+    title SitDownPls
+  body
+    - var similarItems = [{rating: '4,5', link: 'images/similar1.png', linkMobile: 'images/similar1-700.png', title: 'Диван велюровый “R-85”', price: '34 990 руб'},{rating: '4,6', link: 'images/similar2.png', linkMobile: 'images/similar2-700.png', title: 'Диван флоковый “H-58”', price: '23 990 руб'},{rating: '4,5', link: 'images/similar3.png', linkMobile: 'images/similar3-700.png', title: 'Диван велюровый “S-44”', price: '19 990 руб'},{rating: '4,8', link: 'images/similar4.png', linkMobile: 'images/similar4-700.png', title: 'Диван шиниловый “V-43”', price: '19 990 руб'},{rating: '4,5', link: 'images/similar1.png', linkMobile: 'images/similar1-700.png', title: 'Диван велюровый “R-85”', price: '34 990 руб'},{rating: '4,5', link: 'images/similar1.png', linkMobile: 'images/similar1-700.png', title: 'Диван велюровый “R-85”', price: '34 990 руб'},{rating: '4,5', link: 'images/similar1.png', linkMobile: 'images/similar1-700.png', title: 'Диван велюровый “R-85”', price: '34 990 руб'}]
+    include includes/header.pug
+    main
+        section.catalog-menu.item-page
+                .container.catalog-menu__conttainer
+                    ul.catalog-menu__list
+                        li.catalog-menu__item
+                            a.catalog-menu__link(href="#")  Главная
+                        li.catalog-menu__item
+                            a.catalog-menu__link(href="#")  / Каталог
+                        li.catalog-menu__item
+                            a.catalog-menu__link(href="#")  / Диваны
+                        li.catalog-menu__item
+                            a.catalog-menu__link(href="#")  / Прямые диваны
+                        li.catalog-menu__item
+                            a.catalog-menu__link(href="#")  / D-31
+        section.item-info
+            .container.item-info__container
+                .item-info__photos-content
+                    img.item-info__main-img(src="images/itemPage1.png", alt="pic")
+                .item-info__another-imgs
+                    img(src="images/itemPage5.png", alt="pic")
+                    img(src="images/itemPage2.png", alt="pic" width="66")
+                    img(src="images/itemPage3.png", alt="pic")
+                    img(src="images/itemPage4.png", alt="pic")
+                .item-info__price-content
+                    .item-info__rating
+                        img(src="images/rating.png", alt="rating")
+                        span 4,8
+                    p.item-info__name Диван тканевый прямой “D-31”
+                    p.item-info__other Мини 120 см без ящика Stark синий (Рогожка)
+                    p.item-info__price 28 490 руб
+                    .item-info__btn-container
+                        button.item-info__buy-btn Купить в один клик
+                        button.item-info__add-to-cart-btn + Добавить в корзину
+                .item-info__descr-content
+                    p.item-info__descr-title Опорный механизм
+                    p.item-info__descr Опорный механизм напоминает пантограф, к которому добавили дополнительную секцию. У опорного дивана сиденье «выпрыгивает» вперёд и вытаскивает вторую часть спального места. Заключительный штрих — опустить спинку.
+                    p.item-info__descr Этот механизм не портит пол и не боится ковров. Требуется чуть больше силы, чтобы разложить диван, но подросток справится.
+                    img.item-info__descr-img(src="images/itemPage-descr.png", alt="pic")
+                .item-info__tech-info.item-info__tech-info--desc.item-info__tech-info--left
+                    .item-info__tech-info-item.item-info__tech-info-item--left 
+                        span Гарантия
+                    .item-info__tech-info-item.item-info__tech-info-item--left 
+                        span Артикул
+                    .item-info__tech-info-item.item-info__tech-info-item--left 
+                        span Длина
+                    .item-info__tech-info-item.item-info__tech-info-item--left 
+                        span Высота
+                    .item-info__tech-info-item.item-info__tech-info-item--left 
+                        span Глубина
+                    .item-info__tech-info-item.item-info__tech-info-item--left 
+                        span Спальное место
+                    .item-info__tech-info-item.item-info__tech-info-item--left 
+                        span Высота посадки
+                    .item-info__tech-info-item.item-info__tech-info-item--left 
+                        span Механизм
+                    .item-info__tech-info-item.item-info__tech-info-item--left 
+                        span Тип обивки
+                    .item-info__tech-info-item.item-info__tech-info-item--left 
+                        span Цвет
+                    .item-info__tech-info-item.item-info__tech-info-item--left 
+                        span Наполнитель
+                    .item-info__tech-info-item.item-info__tech-info-item--left 
+                        span Материал каркаса
+                    .item-info__tech-info-item.item-info__tech-info-item--left 
+                        span Количество мест
+                    .item-info__tech-info-item.item-info__tech-info-item--left 
+                        span Категория
+                    .item-info__tech-info-item.item-info__tech-info-item--left 
+                        span Возврат
+                .item-info__tech-info.item-info__tech-info--desc.item-info__tech-info--right
+                    p.item-info__tech-info-item.item-info__tech-info-item--right 18 месяцев
+                    p.item-info__tech-info-item.item-info__tech-info-item--right AAA41269004
+                    p.item-info__tech-info-item.item-info__tech-info-item--right 163 см
+                    p.item-info__tech-info-item.item-info__tech-info-item--right 90 см
+                    p.item-info__tech-info-item.item-info__tech-info-item--right 108 см
+                    p.item-info__tech-info-item.item-info__tech-info-item--right 200 см х 125 см
+                    p.item-info__tech-info-item.item-info__tech-info-item--right 45 см
+                    p.item-info__tech-info-item.item-info__tech-info-item--right Опорный
+                    p.item-info__tech-info-item.item-info__tech-info-item--right Рогожка
+                    p.item-info__tech-info-item.item-info__tech-info-item--right Синий
+                    p.item-info__tech-info-item.item-info__tech-info-item--right Независимый пружинный блок
+                    p.item-info__tech-info-item.item-info__tech-info-item--right Металл. рама с дерев. латами 
+                    p.item-info__tech-info-item.item-info__tech-info-item--right Двухместные
+                    p.item-info__tech-info-item.item-info__tech-info-item--right Прямые тканевые диваны
+                    p.item-info__tech-info-item.item-info__tech-info-item--right Условия
+                .item-info__tech-info.item-info__tech-info--mobile
+                    .item-info__tech-info-item 
+                        p.item-info__tech-info-item--left Гарантия
+                        p.item-info__tech-info-item--right 18 месяцев
+                    .item-info__tech-info-item 
+                        p.item-info__tech-info-item--left Артикул
+                        p.item-info__tech-info-item--right AAA41269004
+                    .item-info__tech-info-item 
+                        p.item-info__tech-info-item--left Длина
+                        p.item-info__tech-info-item--right 163 см
+                    .item-info__tech-info-item 
+                        p.item-info__tech-info-item--left Высота
+                        p.item-info__tech-info-item--right 90 см
+                    .item-info__tech-info-item 
+                        p.item-info__tech-info-item--left Глубина
+                        p.item-info__tech-info-item--right 108 см
+                    .item-info__tech-info-item 
+                        p.item-info__tech-info-item--left Спальное место
+                        p.item-info__tech-info-item--right 200 см х 125 см
+                    .item-info__tech-info-item 
+                        p.item-info__tech-info-item--left Высота посадки
+                        p.item-info__tech-info-item--right 45 см
+                    .item-info__tech-info-item 
+                        p.item-info__tech-info-item--left Механизм
+                        p.item-info__tech-info-item--right Опорный
+                    .item-info__tech-info-item 
+                        p.item-info__tech-info-item--left Тип обивки
+                        p.item-info__tech-info-item--right Рогожка
+                    .item-info__tech-info-item 
+                        p.item-info__tech-info-item--left Цвет
+                        p.item-info__tech-info-item--right Синий
+                    .item-info__tech-info-item 
+                        p.item-info__tech-info-item--left Наполнитель
+                        p.item-info__tech-info-item--right Независимый пружинный блок
+                    .item-info__tech-info-item 
+                        p.item-info__tech-info-item--left Материал каркаса
+                        p.item-info__tech-info-item--right Металл. рама с дерев. латами 
+                    .item-info__tech-info-item 
+                        p.item-info__tech-info-item--left Количество мест
+                        p.item-info__tech-info-item--right Двухместные
+                    .item-info__tech-info-item 
+                        p.item-info__tech-info-item--left Категория
+                        p.item-info__tech-info-item--right Прямые тканевые диваны
+                    .item-info__tech-info-item 
+                        p.item-info__tech-info-item--left Возврат
+                        p.item-info__tech-info-item--right Условия
+        section.similar
+            .container.similar__container.relative
+                h2.similar__caption Похожие товары
+                .similarSwiper
+                    ul.similar__list.swiper-wrapper
+                        each item in similarItems
+                            li.swiper-slide.similar__item.similar-item.relative
+                                a.itemLink(href="itemPage.html" target="_blank") 
+                                .similar-item__rating
+                                    img(src="images/rating.png", alt="rating")
+                                    span= item.rating
+                                picture.similar-item__img 
+                                    source(srcset= item.linkMobile media="(max-width: 700px)")
+                                    img(src= item.link alt="pic")
+                                h3.similar-item__title= item.title
+                                p.similar-item__price= item.price
+                                button.similar-item__btn.itemBtn Купить
+                    .similar__pagination
+                        button.similar__back-btn
+                            svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                g
+                                    circle(cx="16" cy="16" r="15" transform="matrix(-1 0 0 1 32 0)" stroke="#A65CF0" stroke-width="2")
+                                    path(d="M18 11L13 16L18 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                                defs
+                                    clipPath
+                                    rect(width="32" height="32" fill="white")
+                        button.similar__forward-btn
+                            svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                g
+                                    circle(cx="16" cy="16" r="15" transform="matrix(-1 0 0 1 32 0)" stroke="#A65CF0" stroke-width="2")
+                                    path(d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                                defs
+                                    clipPath
+                                    rect(width="32" height="32" fill="white")                    
+    include includes/dialogCallBack.pug
+    include includes/dialogItemPrev.pug
+    include includes/dialogForm.pug
+    include includes/footer.pug
+    script(src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js")
+    script(src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js")
+    script(src="resources/choices.min.js")
+    script(src="app.js")

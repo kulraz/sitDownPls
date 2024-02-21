@@ -1,0 +1,257 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.top-category {
+    padding: 70px 0;
+    &__caption {
+        margin-bottom: 21px;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 100%;
+        color: $titleColor;
+        @media (max-width: 1024px) {
+            margin-bottom: 26px;
+        }
+        @media (max-width: 700px) {
+            font-size: 24px;
+            line-height: 100%;
+        }
+    }
+    &__list {
+        @include list-reset;
+        display: grid;
+        grid-template-areas: 
+            "item1 item1 item1 item2 item2 item2"
+            "item3 item3 item4 item4 item5 item5";
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: auto;
+        grid-gap: 32px;
+        @media (max-width: 1024px) {
+            grid-template-areas: 
+            "item1 item1 item1 item1 item3 item3"
+            "item4 item4 item2 item2 item5 item5";
+            grid-auto-rows: 1fr;
+        }
+        @media (max-width: 1000px) {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-areas: 
+            "item1 item1 item1 item1"
+            "item3 item3 item2 item2"
+            "item4 item4 item5 item5";
+        }
+        @media (max-width: 700px) {
+            grid-auto-rows: unset;
+            grid-gap: 16px;
+            grid-row-gap: 32px;
+        }
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 30px 0;
+        background: #F7F7F7;
+        border-radius: 10px;
+        @media (max-width: 700px) {
+            padding-bottom: 13px;
+        }
+    }
+    &__item--one {
+        grid-area: item1;
+        min-height: 511px;
+        @media (max-width: 700px) {
+            min-height: 332px;
+        }
+    }
+    &__item--two {
+        grid-area: item2;
+    }
+    &__item--three {
+        grid-area: item3;
+    }
+    &__item--four {
+        grid-area: item4;
+    }
+    &__item--five {
+        grid-area: item5;
+        min-height: 405px;
+        @media (max-width: 700px) {
+            min-height: 206px;
+        }
+    }
+    &__menu {
+        @include list-reset;
+        display: flex;
+        margin-bottom: 10px;
+        padding: 0 30px;
+        color: $mainColor;       
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+        @media (max-width: 1024px) {
+            margin-bottom: 13px;
+        }
+        @media (max-width: 700px) {
+            justify-content: center;
+            padding: 0 16px;
+            margin-bottom: 14px;
+        }
+    }
+    &__item--one .top-category__title-container {
+        @media (max-width: 1024px) {
+            margin-bottom: 30px;
+        } 
+        @media (max-width: 700px) {
+            margin-bottom: 13px;
+        }
+    }
+    &__item:not(:first-child) {
+        @media (max-width: 700px) {
+            padding: 16px 0 13px;
+        }
+    }
+    &__item:not(:first-child) &__menu {
+        @media (max-width: 700px) {
+            flex-direction: column;
+            margin-bottom: 8px;
+        }
+    }
+    &__item:not(:first-child) &__menu-item {
+        @media (max-width: 700px) {
+            font-size: 10px;
+            line-height: 100%;
+        }
+    }
+    &__item:not(:first-child) &__menu-item:not(:last-child) {
+        margin-bottom: 4px;
+    }
+    &__item:not(:first-child) &__title-container {
+        @media (max-width: 700px) {
+            padding: 0 16px;
+            margin-bottom: 16px;
+        }
+    }
+    &__item:not(:first-child) &__title {
+        @media (max-width: 700px) {
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+    &__item:nth-child(4) &__title {
+        @media (max-width: 700px) {
+            line-height: 17px;
+            max-width: 86px;
+            margin-right: unset;
+        }
+    }
+    &__item:nth-child(4) &__title-container,
+    &__item:nth-child(3) &__title-container {
+        @media (max-width: 700px) {
+            margin-bottom: auto;
+        }
+    }
+    &__menu-item:not(:last-child) {
+        margin-right: 30px;
+        @media (max-width: 700px) {
+            margin-right: 20px;
+        }
+    }
+    &__title {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 33px;
+        color: $titleColor;
+        @media (max-width: 700px) {
+            margin-right: 5px;
+            
+        }
+    }
+    &__title-container {
+        margin-bottom: auto;
+        padding: 0 30px;
+        @media (max-width: 700px) {
+            margin-bottom: auto;
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__img {
+        margin-right: auto;
+        @media (max-width: 700px) {
+            margin-right: unset;
+            align-self: center;
+        }
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+        margin-top: 28px;
+        padding: 0 30px;
+        width: max-content;
+        @media (max-width: 700px) {
+            display: none;
+        }
+    }
+    &__link p {
+        margin-right: 5px;
+        color: $link-btnColor;
+        font-size: 16px;
+        font-weight: 700;
+        transition: text-decoration 0.5s ease-in-out, color 0.5s ease-in-out;
+    }
+    &__mobile-link {
+        display: none;
+        @media (max-width: 700px) {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+        }
+    }
+    &__link svg circle,
+    &__link svg path,
+    &__link svg g path,
+    &__mobile-link svg g path,
+    &__mobile-link svg circle,
+    &__mobile-link svg path {
+        transition: stroke 0.3s ease-in-out, fill 0.3s ease-in-out;
+    }
+    &__link:focus-visible p {
+        text-decoration: underline;
+        color: $link-btnColor;
+    }
+    &__link:focus:not(:hover) svg circle,
+    &__mobile-link:focus:not(:hover) svg circle {
+        stroke: #A65CF0;
+        fill: #C998FB; 
+    }
+    &__link:focus:not(:hover) svg path,
+    &__mobile-link:focus:not(:hover) svg path {
+        fill: #FFF;
+    }
+    &__link:hover p {
+        text-decoration: underline;
+        color: $link-btnColor;
+    }
+    &__link:hover svg circle,
+    &__mobile-link:hover svg circle {
+        stroke: #A65CF0;
+        fill: #A65CF0;
+    }
+    &__link:hover svg g path,
+    &__mobile-link:hover svg g path {
+        stroke: #ffffff;
+    }
+    &__link:active p {
+        text-decoration: underline;
+        color: #7033AC;
+    }
+    &__link:active svg circle,
+    &__mobile-link:active svg circle {
+        stroke: #7033AC;
+        fill: #7033AC;
+    }
+    &__link:active svg g path,
+    &__mobile-link:active svg g path {
+        stroke: #ffffff;
+    }
+}

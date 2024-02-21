@@ -1,0 +1,197 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.hero {
+    padding-top: 12px;
+    &__container {
+        overflow: hidden;   
+        position: relative;
+        min-height: 400px;
+    @media (max-width: 700px) {
+        min-height: 210px;
+        margin-bottom: 32px;
+    }
+    }
+    @media (max-width: 700px) {
+        min-height: unset;
+    }
+}
+.swiper {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: fit-content;
+}
+
+.swiper__container {
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 32px;
+    grid-row-gap: 49px;
+    grid-template-rows: auto;
+    position: relative;
+    padding: 80px 0;
+    @media (max-width: 1300px) {
+        grid-template-columns: repeat(9, 1fr);
+        padding: 80px 36px;
+    }
+    @media (max-width: 1000px) {
+        grid-template-columns: repeat(6, 1fr);
+        padding: 80px 72px;
+    }
+    @media (max-width: 700px) {
+        grid-gap: 16px;
+        padding: 30px;
+        position: relative;
+    }
+}
+.swiper__caption {
+    grid-column: 1/6;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 65px;
+    color: $mainColor;
+    @media (max-width: 700px) {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 27px;
+    }
+}
+.swiper__caption--three {
+    color: #ffffff;
+}
+.swiper-slide.swiper-slide--three .swiper__caption {
+    grid-column: 1/7;
+}
+.swiper__btn {
+    @include btn-reset;
+    @include btn-common;
+    @include primary-btn;
+    grid-column: 1/3;
+    padding: 22px 50px;
+    font-weight: 700;
+    @media (max-width: 1300px) {
+        display: none;
+    }
+}
+.swiper__btn.swiper__btn--tablet {
+    display: none;
+    @media (max-width: 1300px) {
+        display: block;
+    }
+    @media (max-width: 700px) {
+        display: none;
+    }
+}
+.swiper__btn:focus-visible {
+    @include primary-btn-focus;
+}
+.swiper__btn:hover {
+    @include primary-btn-hover;
+}
+.swiper__btn:active {
+    @include primary-btn-active;
+}
+.swiper__pagination {
+    position: absolute;
+    bottom: 23px;
+    left: 48%;
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
+}
+.swiper-slide {
+    height: auto;
+}
+.swiper-slide--one  {
+    background-image: url("images/swiper1-1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media (max-width: 768px) {
+        background-image: url("images/swiper1-1-768.jpg");
+    }
+    @media (max-width: 320px) {
+        background-image: url("images/swiper1-1-320.jpg");
+    }
+}
+.swiper-slide--two {
+    background-image: url("images/swiper1-2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media (max-width: 768px) {
+        background-image: url("images/swiper1-2-768.jpg");
+    }
+    @media (max-width: 320px) {
+        background-image: url("images/swiper1-2-320.jpg");
+    }
+}
+.swiper-slide--three {
+    background-image: url("images/swiper1-3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media (max-width: 768px) {
+        background-image: url("images/swiper1-3-768.jpg");
+    }
+    @media (max-width: 320px) {
+        background-image: url("images/swiper1-3-320.jpg");
+    }
+}
+
+.swiper-pagination-bullet-active {
+    background-color: $titleColor;
+}
+
+.hero-swiper .swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    @media (max-width: 1300px) {
+        bottom: 22px;
+    }
+    @media (max-width: 700px) {
+        bottom: 5px;
+    }
+}
+
+.hero-swiper .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    @media (max-width: 1300px) {
+        margin: 0 8px;
+    }
+    @media (max-width: 700px) {
+        margin: 0 4px;
+    }
+}
+
+.hero-swiper .swiper-pagination-bullet {
+    z-index: 99999;
+    @media (max-width: 1300px) {
+        width: 14px;
+        height: 14px;
+    }
+    @media (max-width: 700px) {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+.hero__mobile-btn {
+    display: none;
+    @media (max-width: 700px) {
+        display: flex;
+        justify-content: center;
+        padding: 0 12px;
+    }
+}
+
+.mobile-btn__btn {
+    @include btn-reset;
+    @include btn-common;
+    @include primary-btn;
+    width: 100%;
+    padding: 22px 35px;
+    width: 296px;
+}

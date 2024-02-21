@@ -1,0 +1,169 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="normalize.css")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css")
+        link(rel="stylesheet", href="resources/choices.min.css")
+        link(rel="stylesheet", href="resources/nouislider.min.css")
+        link(rel="stylesheet", href="main.css")
+        link(rel="shortcut icon" href="images/fav.png" type="image/x-icon")
+        title SitDownPls
+    body
+        - var items = [{rating: '5,0', link: 'images/tops1.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops14-700.png', title: 'Диван кожаный “R-94”', price: '94 990 руб'},{rating: '4,9', link: 'images/tops2.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops15-700.png', title: 'Диван апартековый “T-75”', price: '69 990 руб'},{rating: '4,8', link: 'images/tops3.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops1-700.png', title: 'Диван тканевый “D-31”', price: '28 490 руб'},{rating: '4,8', link: 'images/tops4.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops18-700.png', title: 'Диван велюровый “Y-68”', price: '22 990 руб'},{rating: '4,8', link: 'images/tops5.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops12-700.png', title: 'Диван из шинила “W-95”', price: '22 990 руб'},{rating: '4,8', link: 'images/tops6.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops11-700.png', title: 'Диван флоковый “G-41”', price: '17 990 руб'},{rating: '4,8', link: 'images/tops7.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops13-700.png', title: 'Диван шиниловый “V-43”', price: '19 990 руб'},{rating: '4,7', link: 'images/tops8.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops17-700.png', title: 'Диван велюровый “S-99”', price: '19 990 руб'},{rating: '4,4', link: 'images/tops9.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops16-700.png', title: 'Диван из шинила “С-80”', price: '20 990 руб'},{rating: '4,6', link: 'images/tops10.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops7-700.png', title: 'Диван флоковый “H-64”', price: '25 990 руб'},{rating: '4,6', link: 'images/tops11.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops2-700.png', title: 'Диван флоковый “H-58”', price: '23 990 руб'},{rating: '4,6', link: 'images/tops12.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops3-700.png', title: 'Диван из кожзама “R-43”', price: '33 990 руб'},{rating: '4,6', link: 'images/tops13.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops10-700.png', title: 'Диван из шинила “С-42”', price: '18 990 руб'},{rating: '4,6', link: 'images/tops14.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops8-700.png', title: 'Диван велюровый “U-58”', price: '21 990 руб'},{rating: '4,5', link: 'images/tops15.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops6-700.png', title: 'Диван флоковый “F-41”', price: '17 990 руб'},{rating: '4,4', link: 'images/tops16.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops5-700.png', title: 'Диван велюровый “R-85”', price: '34 990 руб'},{rating: '4,5', link: 'images/tops17.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops4-700.png', title: 'Диван велюровый “S-44”', price: '19 990 руб'},{rating: '4,4', link: 'images/tops18.png', linkLaptop: 'images/tops1-1300.png', linkTablet: 'images/tops1-1000.png', linkMobile: 'images/tops9-700.png', title: 'Диван из шинила “С-80”', price: '20 990 руб'}];
+        include includes/header.pug
+        main
+            section.catalog-menu 
+                .container.catalog-menu__conttainer 
+                    ul.catalog-menu__list 
+                        li.catalog-menu__item
+                            a.catalog-menu__link(href="#")  Главная
+                        li.catalog-menu__item
+                            a.catalog-menu__link(href="#")  / Каталог
+                        li.catalog-menu__item
+                            a.catalog-menu__link(href="#")  / Диваны
+                        li.catalog-menu__item
+                            a.catalog-menu__link(href="#")  / Прямые диваны
+            .catalog-aside-container.container
+                section.catalog 
+                    .catalog__container
+                        h2.catalog__caption Каталог
+                        ul.catalog__content
+                            each item in items 
+                                li.catalog__item.catalog-item.relative
+                                    a.itemLink(href="itemPage.html" target="_blank")  
+                                    .catalog-item__rating
+                                        img(src="images/rating.png", alt="rating")
+                                        span= item.rating 
+                                    picture.catalog-item__img
+                                        source(srcset= item.linkMobile media="(max-width: 500px)")
+                                        img(src= item.link alt="pic")
+                                    h3.catalog-item__title= item.title
+                                    p.catalog-item__price= item.price 
+                                    button.catalog-item__btn.itemBtn Купить
+                        .catalog__slide-btn-container 
+                            button.catalog__slide-btn.catalog__slide-btn--active.catalog__slide-btn--first(aria-label="номер страницы") 1
+                            button.catalog__slide-btn.catalog__slide-btn--second(aria-label="номер страницы") 2
+                            button.catalog__slide-btn.catalog__slide-btn--third(aria-label="номер страницы") 3
+                aside.aside.catalog-aside(aria-label="фильтрация товаров")
+                    .aside__container
+                        h2.aside__caption.aside__caption--desc Фильтровать по:
+                        h2.aside__caption.aside__caption--tablet Фильтры:
+                        .aside__checkbox.aside-checkbox.aside__checkbox--first
+                            .aside-checkbox__container.aside-checkbox__container--first
+                                .aside-checkbox__title 
+                                    p Каталог
+                                    svg.aside-checkbox__title-arrow(xmlns="http://www.w3.org/2000/svg" width="13" height="8" viewBox="0 0 13 8" fill="none")
+                                        path(fill-rule="evenodd" clip-rule="evenodd" d="M6.65674 5.80521L11.5593 0.902607L12.3136 1.65685L6.65674 7.31371L0.999884 1.65685L1.75413 0.902607L6.65674 5.80521Z" fill="#A65CF0")
+                                .aside-checkbox__label-container
+                                    label.aside-checkbox__label(for="checkbox-sofa") 
+                                        input.aside-checkbox__checkbox#checkbox-sofa(type="checkbox", name="catalog-category" aria-label="чекбокс"  tabindex="0") 
+                                        span.aside-checkbox__text Диваны
+                                    label.aside-checkbox__label(for="checkbox-armchair") 
+                                        input.aside-checkbox__checkbox#checkbox-armchair(type="checkbox", name="catalog-category" aria-label="чекбокс" tabindex="0") 
+                                        span.aside-checkbox__text Кресла
+                                    label.aside-checkbox__label(for="checkbox-pouffe") 
+                                        input.aside-checkbox__checkbox#checkbox-pouffe(type="checkbox", name="catalog-category" aria-label="чекбокс" tabindex="0") 
+                                        span.aside-checkbox__text Пуфы
+                                    label.aside-checkbox__label(for="checkbox-bed") 
+                                        input.aside-checkbox__checkbox#checkbox-bed(type="checkbox", name="catalog-category" aria-label="чекбокс" tabindex="0") 
+                                        span.aside-checkbox__text Кровати
+                                    label.aside-checkbox__label(for="checkbox-pedestal") 
+                                        input.aside-checkbox__checkbox#checkbox-pedestal(type="checkbox", name="catalog-category" aria-label="чекбокс" tabindex="0")
+                                        span.aside-checkbox__text  Тумбы
+                                    label.aside-checkbox__label(for="checkbox-dresser") 
+                                        input.aside-checkbox__checkbox#checkbox-dresser(type="checkbox", name="catalog-category" aria-label="чекбокс" tabindex="0") 
+                                        span.aside-checkbox__text Комоды
+                                    label.aside-checkbox__label(for="checkbox-chair") 
+                                        input.aside-checkbox__checkbox#checkbox-chair(type="checkbox", name="catalog-category" aria-label="чекбокс" tabindex="0")
+                                        span.aside-checkbox__text  Стулья
+                                    label.aside-checkbox__label(for="checkbox-table") 
+                                        input.aside-checkbox__checkbox#checkbox-table(type="checkbox", name="catalog-category" aria-label="чекбокс" tabindex="0") 
+                                        span.aside-checkbox__text Столы
+                                    label.aside-checkbox__label(for="checkbox-accessories") 
+                                        input.aside-checkbox__checkbox#checkbox-accessories(type="checkbox", name="catalog-category" aria-label="чекбокс" tabindex="0") 
+                                        span.aside-checkbox__text Аксессуары
+                        .aside__range.range
+                            .range__title
+                                p Цена
+                                svg.range__title-arrow(xmlns="http://www.w3.org/2000/svg" width="13" height="8" viewBox="0 0 13 8" fill="none")
+                                        path(fill-rule="evenodd" clip-rule="evenodd" d="M6.65674 5.80521L11.5593 0.902607L12.3136 1.65685L6.65674 7.31371L0.999884 1.65685L1.75413 0.902607L6.65674 5.80521Z" fill="#A65CF0")    
+                            .range__prices.flex
+                                label.range__label.range__label--first
+                                    span.range__span от
+                                    input.range__prices-input#range-prices__input1(type="number" min="200" max="999999" placeholder="2000" aria-label="чекбокс")
+                                label.range__label.range__label--second
+                                    span.range__span до
+                                    input.range__prices-input#range-prices__input2(type="number" min="200" max="999999" placeholder="250000" aria-label="чекбокс")
+                            .range__input#range-input
+                        .aside__checkbox.aside-checkbox.aside__checkbox--second
+                            .aside-checkbox__container.aside-checkbox__container--second
+                                .aside-checkbox__title 
+                                    p Скидка
+                                    svg.aside-checkbox__title-arrow(xmlns="http://www.w3.org/2000/svg" width="13" height="8" viewBox="0 0 13 8" fill="none")
+                                        path(fill-rule="evenodd" clip-rule="evenodd" d="M6.65674 5.80521L11.5593 0.902607L12.3136 1.65685L6.65674 7.31371L0.999884 1.65685L1.75413 0.902607L6.65674 5.80521Z" fill="#A65CF0")
+                                .aside-checkbox__label-container
+                                    label.aside-checkbox__label(for="checkbox-lessThan") 
+                                        input.aside-checkbox__checkbox#checkbox-lessThan(type="checkbox", name="catalog-discount" aria-label="чекбокс")
+                                        span.aside-checkbox__text Более 5 000
+                                    label.aside-checkbox__label(for="checkbox-moreThan") 
+                                        input.aside-checkbox__checkbox#checkbox-moreThan(type="checkbox", name="catalog-discount" aria-label="чекбокс")
+                                        span.aside-checkbox__text Менее 5 000
+                                    label.aside-checkbox__label(for="checkbox-doesNotMatter") 
+                                        input.aside-checkbox__checkbox#checkbox-doesNotMatter(type="checkbox", name="catalog-discount")
+                                        span.aside-checkbox__text Не важно
+                        .aside__checkbox.aside-checkbox.aside__checkbox--third
+                            .aside-checkbox__container.aside-checkbox__container--third
+                                .aside-checkbox__title 
+                                    p Цвет
+                                    svg.aside-checkbox__title-arrow(xmlns="http://www.w3.org/2000/svg" width="13" height="8" viewBox="0 0 13 8" fill="none")
+                                        path(fill-rule="evenodd" clip-rule="evenodd" d="M6.65674 5.80521L11.5593 0.902607L12.3136 1.65685L6.65674 7.31371L0.999884 1.65685L1.75413 0.902607L6.65674 5.80521Z" fill="#A65CF0")
+                                .aside-checkbox__label-container
+                                    label.aside-checkbox__label(for="checkbox-brown") 
+                                        input.aside-checkbox__checkbox#checkbox-brown(type="checkbox", name="catalog-color" aria-label="чекбокс")
+                                        span.aside-checkbox__text Коричневый
+                                    label.aside-checkbox__label(for="checkbox-black") 
+                                        input.aside-checkbox__checkbox#checkbox-black(type="checkbox", name="catalog-color" aria-label="чекбокс")
+                                        span.aside-checkbox__text Черный
+                                    label.aside-checkbox__label(for="checkbox-beige") 
+                                        input.aside-checkbox__checkbox#checkbox-beige(type="checkbox", name="catalog-color" aria-label="чекбокс")
+                                        span.aside-checkbox__text Бежевый
+                                    label.aside-checkbox__label(for="checkbox-gray") 
+                                        input.aside-checkbox__checkbox#checkbox-gray(type="checkbox", name="catalog-color" aria-label="чекбокс")
+                                        span.aside-checkbox__text Серый
+                                    label.aside-checkbox__label(for="checkbox-white") 
+                                        input.aside-checkbox__checkbox#checkbox-white(type="checkbox", name="catalog-color" aria-label="чекбокс")
+                                        span.aside-checkbox__text Белый
+                                    label.aside-checkbox__label(for="checkbox-blue") 
+                                        input.aside-checkbox__checkbox#checkbox-blue(type="checkbox", name="catalog-color" aria-label="чекбокс")
+                                        span.aside-checkbox__text Синий
+                                    label.aside-checkbox__label(for="checkbox-orange") 
+                                        input.aside-checkbox__checkbox#checkbox-orange(type="checkbox", name="catalog-color" aria-label="чекбокс")
+                                        span.aside-checkbox__text Оранжевый
+                                    label.aside-checkbox__label(for="checkbox-yellow") 
+                                        input.aside-checkbox__checkbox#checkbox-yellow(type="checkbox", name="catalog-color" aria-label="чекбокс")
+                                        span.aside-checkbox__text Желтый
+                                    label.aside-checkbox__label(for="checkbox-green") 
+                                        input.aside-checkbox__checkbox#checkbox-green(type="checkbox", name="catalog-color" aria-label="чекбокс")
+                                        span.aside-checkbox__text Зеленый
+                        article.aside__article.aside-article 
+                            img.aside-article__img(src="images/aside-article.jpg" alt="pic")
+                            .aside-article__content
+                                h2.aside-article__title.aside-article__title--top  Оксфорд 1950
+                                p.aside-article__title.aside-article__title--bottom Новая коллекция изысканных кресел
+                                .aside-article__link
+                                    a(href="#") В каталог
+                                    svg(width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        g
+                                            circle(cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2")
+                                            path(d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")  
+                                        defs
+                                            clipPath
+                                                rect(width="22" height="22" fill="white")
+                    
+        include includes/footer.pug
+        script(src="resources/choices.min.js")
+        script(src="resources/nouislider.min.js")
+        script(src="app.js") 

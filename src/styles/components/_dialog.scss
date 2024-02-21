@@ -1,0 +1,311 @@
+
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.dialog-callBack {
+    display: none;
+    position: fixed;
+    background: rgba(51, 51, 51, 0.3);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin: auto;
+        width: 624px;
+        height: 421px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        @media (max-width: 700px) {
+            width: 296px;
+            height: 216px;
+            padding: 30px 16px;
+        }
+    }
+    &__close-btn {
+        @include btn-reset;
+        width: fit-content;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    &__img {
+        object-fit: scale-down;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 32px;
+        @media (max-width: 700px) {
+            width: 73px;
+            height: 50px;
+        }
+    }
+    &__pgh {
+        color: #333333;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 100%;
+        @media (max-width: 700px) {
+            font-size: 16px;
+        }
+    }
+}
+
+.dialog-callBack--active {
+    display: flex;
+}
+
+.dialog-form {
+    display: none;
+    position: fixed;
+    background: rgba(51, 51, 51, 0.3);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000; 
+    &__container {
+        position: relative;
+        padding: 30px;
+        margin: auto;
+        width: 624px;
+        height: 421px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        @media (max-width: 700px) {
+            width: 297px;
+            padding: 30px 10px 30px 16px;
+        }
+    }
+    &__close-btn {
+        @include btn-reset;
+        width: fit-content;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    &__form {
+        width: 100%;
+    }
+    &__form .form__text {
+        word-break: keep-all;
+    }
+    &__caption {
+        margin-bottom: 8px;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 100%;
+        color: #333333;
+        @media (max-width: 700px) {
+            font-size: 24px;
+        }
+    }
+    &__descr {
+        margin-bottom: 30px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: #333333;
+        @media (max-width: 700px) {
+            margin-bottom: 16px;
+        }
+    }
+    &__label {
+        width: 100%;
+    }
+    &__input {
+        width: 100%;
+        background: #F7F7F7;
+        border: none;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        padding: 7px 18px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 40px;
+        color: #999999;
+        transition: outline 0.3s ease-in-out, background-color 0.3s ease-in-out; 
+        @media (max-width: 700px) {
+            margin-bottom: 16px;
+        }
+    }
+    &__input:focus-visible {
+        outline: 1px solid #A65CF0;
+    }
+    &__input:focus-visible.success,
+    &__input:focus-visible.error{
+        outline: none;
+    }
+    &__label:hover input {
+        background: #EAEAEA;
+    }
+    &__btn {
+        @include btn-reset;
+        @include btn-common;
+        @include primary-btn;
+        margin-bottom: 12px;
+    }
+    &__btn:focus-visible {
+        @include primary-btn-focus;
+    }
+    &__btn:hover {
+        @include primary-btn-hover;
+    }
+    &__btn:active {
+        @include primary-btn-active;
+    }
+}
+
+.input-wrapper--check-box .errorLabel {
+    top: unset;
+    bottom: -25px;
+}
+
+.dialog-form--active {
+    display: flex;
+}
+
+.dialog-item {
+    display: none;
+    position: fixed;
+    background: rgba(51, 51, 51, 0.3);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000; 
+    &__container {
+        margin: auto;
+    }
+    &__content {
+        position: relative;
+        width: 100%;
+        background: #FFFFFF;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__close-btn {
+        @include btn-reset;
+        width: fit-content;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    &__photos-content {
+        padding: 50px;
+    }
+    &__another-imgs--desc {
+        width: 100%;
+        background: #F7F7F7;
+        border-radius: 0 0 10px 10px;
+        @media (max-width: 700px) {
+            display: none;
+        }
+    }
+    &__another-imgs--desc img {
+        object-fit: scale-down;
+        max-width: 20%;
+        max-height: 20%;
+    }
+    &__another-imgs--desc .dialog-item__another-imgs-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 20px;
+    }
+    &__another-imgs--desc img:not(:last-child) {
+        margin-right: 10px;
+    }
+    &__another-imgs--tablet {
+        width: 100%;
+        display: none;
+        @media (max-width: 700px) {
+            display: block;
+        }
+    }
+    &__another-imgs-container {
+        display: flex;
+        width: 100%;
+        padding: 16px 62px;
+        background-color: #F6F6F6;
+    }
+    &__another-img {
+        margin: 0 auto; 
+        display: none;
+        &--active {
+            display: block;
+        }
+    }
+    &__back-btn,
+    &__forward-btn {
+        @include btn-reset;
+        align-self: center;
+        height: fit-content;
+    }
+    &__forward-btn svg circle,
+    &__back-btn svg circle,
+    &__forward-btn svg path,
+    &__back-btn svg path,
+    &__forward-btn svg g path,
+    &__back-btn svg g path  {
+        transition: stroke 0.3s ease-in-out, fill 0.3s ease-in-out;
+    }
+
+    &__forward-btn:focus:not(:hover) svg circle,
+    &__back-btn:focus:not(:hover) svg circle {
+        stroke: #A65CF0;
+        fill: #C998FB; 
+    }
+    &__forward-btn:focus:not(:hover) svg g path,
+    &__back-btn:focus:not(:hover) svg g path {
+        fill: #C998FB; 
+    }
+    &__forward-btn:focus:not(:hover) svg path,
+    &__back-btn:focus:not(:hover) svg path {
+        fill: #FFF;
+    }
+
+    &__forward-btn:hover svg circle,
+    &__back-btn:hover svg circle {
+        stroke: #A65CF0;
+        fill: #A65CF0;
+    }
+
+    &__forward-btn:hover svg g path,
+    &__back-btn:hover svg g path {
+        stroke: #ffffff;
+    }
+
+    &__forward-btn:active svg circle,
+    &__back-btn:active svg circle {
+        fill: #7033AC;
+        stroke: #7033AC;
+    }
+    &__forward-btn:active svg g path,
+    &__back-btn:active svg g path {
+        stroke: #ffffff;
+    }
+}
+
+.dialog-item--active {
+    display: flex;
+}
+
+.dialog-swiper .swiper-wrapper {
+    width: fit-content;
+} 
+
+.dialog-swiper .swiper-slide {
+    padding: 16px 62px;
+}
+
+.dialog-swiper img {
+    object-fit: scale-down;
+}
